@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -34,11 +36,12 @@ class Rqg
     public static void _quote()
     {
 
+        string[] shuffledQuotes = quote.OrderBy(n => Guid.NewGuid()).ToArray();
 
-        randNumber = rand.Next(quote.Length);
+        randNumber = rand.Next(0, quote.Length);
 
         string margin = "".PadLeft(3);
-        string selectedQuote = quote[randNumber];
+        string selectedQuote = shuffledQuotes[randNumber];
 
         Console.Write(margin + selectedQuote[0]);
 
