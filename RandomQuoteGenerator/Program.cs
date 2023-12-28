@@ -29,7 +29,13 @@ class Rqg
         "\"Without continual growth and progress, such words as improvement, achievement and success have no meaning.\" \n\n   - Benjamin Franklin",
         "\"Great things are not done by impulse, but by a series of small things brought together.\" \n\n   - Vincent Van Gogh",
         "\"Opportunity is missed by most people because it is dressed in overalls and looks like work.\" \n\n   - Thomas Jefferson",
-        "\"A great leader's courage to fulfill his vision comes from passion, not position.\" \n\n   - John C. Maxwell"
+        "\"A great leader's courage to fulfill his vision comes from passion, not position.\" \n\n   - John C. Maxwell",
+        "\"I have no special talent. I am only passionately curious.\" \n\n   - Albert Einstein",
+        "\"Just one small positive thought in the morning can change your whole day.\" \n\n   - Dalai Lama",
+        "\"Happiness is an attitude of mind, born of the simple determination to be happy under all outward circumstances.\" \n\n   - J. Donald Walters",
+        "\"Nature does not hurry, yet everything is accomplished.\" \n\n  - Lao Tzu",
+        "\"He that can have patience can have what he will.\" \n\n   - Benjamin Franklin",
+        "\"Only those who will risk going too far can possibly find out how far one can go.\" \n\n   - T.S. Eliot"
     };
 
 
