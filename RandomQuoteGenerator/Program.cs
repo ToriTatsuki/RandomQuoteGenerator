@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
@@ -11,64 +13,39 @@ class Rqg
     static Random rand = new Random();
     static int randNumber; //determines which quote and author will show
 
-    //List of quotes.
-    //Add your quotes here.
-    //Format: "\"<quote here>\" \n\n   - <author here>"
-    static string[] quote =
-    {
-        "\"Out of the mountain of despair, a stone of hope.\" \n\n   - Martin Luther King Jr.",
-        "\"When you have a dream, you've got to grab it and never let go.\" \n\n   - Carol Burnett",
-        "\"Nothing is impossible. The word itself says 'I'm Possible!'.\" \n\n   - Audrey Hepburn",
-        "\"There is nothing impossible to they who will try.\" \n\n   - Alexander the Great",
-        "\"Show me a person who has never made a mistake and I'll show you someone who has never achieved much.\" \n\n   - Joan Collins",
-        "\"All our dreams can come true, if we have the courage to pursue them.\" \n\n   - Walt Disney",
-        "\"A man is a success if he gets up in the morning and gets to bed at night, and in between does what he wants to do.\" \n\n   - Bob Dylan",
-        "\"The best way out is always through.\" \n\n   - Robert Frost",
-        "\"The greater the obstacle, the more glory in overcoming it.\" \n\n   - Molière",
-        "\"Failure is success in progress.\" \n\n   - Albert Einstein",
-        "\"Without continual growth and progress, such words as improvement, achievement and success have no meaning.\" \n\n   - Benjamin Franklin",
-        "\"Great things are not done by impulse, but by a series of small things brought together.\" \n\n   - Vincent Van Gogh",
-        "\"Opportunity is missed by most people because it is dressed in overalls and looks like work.\" \n\n   - Thomas Jefferson",
-        "\"A great leader's courage to fulfill his vision comes from passion, not position.\" \n\n   - John C. Maxwell",
-        "\"I have no special talent. I am only passionately curious.\" \n\n   - Albert Einstein",
-        "\"Just one small positive thought in the morning can change your whole day.\" \n\n   - Dalai Lama",
-        "\"Happiness is an attitude of mind, born of the simple determination to be happy under all outward circumstances.\" \n\n   - J. Donald Walters",
-        "\"Nature does not hurry, yet everything is accomplished.\" \n\n  - Lao Tzu",
-        "\"He that can have patience can have what he will.\" \n\n   - Benjamin Franklin",
-        "\"Only those who will risk going too far can possibly find out how far one can go.\" \n\n   - T.S. Eliot",
-        "\"Play the game for more than you can afford to lose...only then will you learn the game.\" \n\n   - Winston Churchill",
-        "\"Why not go out on a limb? That's where the fruit is.\" \n\n   - Mark Twain",
-        "\"We have to continually be jumping off cliffs and developing our wings on the way down.\" \n\n   - Kurt Vonnegut",
-        "\"The strongest of all warriors are these two—Time and Patience.\" \n\n   - Leo Tolstoy",
-        "\"Patience is not passive; on the contrary, it is active; it is concentrated strength.\" \n\n   - Edward Bulwer-Lytton",
-        "\"If you have good thoughts they will shine out of your face like sunbeams and you will always look lovely.\"  \n\n   - Roald Dahl",
-        "\"When you're surrounded by people who share a passionate commitment around a common purpose, anything is possible.\" \n\n   - Howard Schultz"
-
-    };
-
-
     public static void _quote()
     {
-
-        string[] shuffledQuotes = quote.OrderBy(n => Guid.NewGuid()).ToArray();
-
-        randNumber = rand.Next(0, quote.Length);
-
-        string margin = "".PadLeft(3);
-        string selectedQuote = shuffledQuotes[randNumber];
-
-        Console.Write(margin + selectedQuote[0]);
-
-        char[] myChar = { selectedQuote[0] };
-        string newQuote = selectedQuote.TrimStart(myChar);
-
-        foreach (char _selectedQuote in newQuote)
+        try
         {
-            Thread.Sleep(10);
-            Console.Write($"{_selectedQuote}");
-        }
+            string[] fileQuotes = File.ReadLines(System.Environment.CurrentDirectory + "\\Quotes\\quotes.txt").ToArray();
 
-        Console.WriteLine("\n");
+            string[] shuffledQuotes = fileQuotes.OrderBy(n => Guid.NewGuid()).ToArray();
+
+            randNumber = rand.Next(0, fileQuotes.Length);
+
+            string margin = "".PadLeft(3);
+            string selectedQuote = shuffledQuotes[0].Replace("<Author>", "\n\n    ");
+
+
+            Console.Write(margin + selectedQuote[0]);
+
+            char[] myChar = { selectedQuote[0] };
+            string newQuote = selectedQuote.TrimStart(myChar);
+
+            foreach (char _selectedQuote in newQuote)
+            {
+                Thread.Sleep(10);
+                Console.Write($"{_selectedQuote}");
+            }
+
+            Console.WriteLine("\n");
+        }
+        catch (Exception ex) {
+            Console.WriteLine("Error Occured: " + ex.Message);
+
+            Thread.Sleep(1500);
+            Environment.Exit(0);
+        }
     }
 
     public static void endText()
