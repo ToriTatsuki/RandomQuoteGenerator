@@ -35,7 +35,15 @@ class Rqg
         "\"Happiness is an attitude of mind, born of the simple determination to be happy under all outward circumstances.\" \n\n   - J. Donald Walters",
         "\"Nature does not hurry, yet everything is accomplished.\" \n\n  - Lao Tzu",
         "\"He that can have patience can have what he will.\" \n\n   - Benjamin Franklin",
-        "\"Only those who will risk going too far can possibly find out how far one can go.\" \n\n   - T.S. Eliot"
+        "\"Only those who will risk going too far can possibly find out how far one can go.\" \n\n   - T.S. Eliot",
+        "\"Play the game for more than you can afford to lose...only then will you learn the game.\" \n\n   - Winston Churchill",
+        "\"Why not go out on a limb? That's where the fruit is.\" \n\n   - Mark Twain",
+        "\"We have to continually be jumping off cliffs and developing our wings on the way down.\" \n\n   - Kurt Vonnegut",
+        "\"The strongest of all warriors are these two—Time and Patience.\" \n\n   - Leo Tolstoy",
+        "\"Patience is not passive; on the contrary, it is active; it is concentrated strength.\" \n\n   - Edward Bulwer-Lytton",
+        "\"If you have good thoughts they will shine out of your face like sunbeams and you will always look lovely.\"  \n\n   - Roald Dahl",
+        "\"When you're surrounded by people who share a passionate commitment around a common purpose, anything is possible.\" \n\n   - Howard Schultz"
+
     };
 
 
