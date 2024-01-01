@@ -24,7 +24,7 @@ class Rqg
             randNumber = rand.Next(0, fileQuotes.Length);
 
             string margin = "".PadLeft(3);
-            string selectedQuote = shuffledQuotes[0].Replace("<Author>", "\n\n    ");
+            string selectedQuote = shuffledQuotes[randNumber].Replace("<Author>", "\n\n    ");
 
 
             Console.Write(margin + selectedQuote[0]);
